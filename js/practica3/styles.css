@@ -1,0 +1,185 @@
+/* Coloque aquí el código CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background: #1488cc;
+  background: linear-gradient(to left, #283593, #1976d2);
+  height: 100vh;
+}
+
+main {
+  margin: 10px;
+  width: 60%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Background circles start */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(#006db3, #29b6f6);
+}
+
+.circles {
+  position: absolute;
+  height: 270px;
+  width: 450px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle-1 {
+  height: 180px;
+  width: 180px;
+  top: -50px;
+  left: -60px;
+}
+
+.circle-2 {
+  height: 200px;
+  width: 200px;
+  bottom: -90px;
+  right: -90px;
+  opacity: 0.8;
+}
+
+/* Background circles end */
+
+main>h1,
+main>p {
+  text-align: center;
+  color: #333333df;
+}
+
+main>h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+main>div {
+  height: 80%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5% 10%;
+  gap: 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Estilo base para el contenedor */
+p {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  padding: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.name__input,
+.date__input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  width: 70%;
+
+}
+
+.name__input:focus,
+.date__input:focus {
+  border: none;
+  outline: none;
+  color: #333;
+}
+
+
+/* Oculta los input radio originales */
+.sexo__input {
+  display: none;
+}
+
+.sexo__input+span {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.sexo__input:checked+span {
+  background-color: #0e32a9d5;
+  color: white;
+}
+
+/* CHECKBOX */
+
+/* Estilo personalizado para el checkbox */
+input[type="checkbox"] {
+  margin: 0;
+  margin-right: 10px;
+  font: inherit;
+  color: currentColor;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+/* boton */
+
+button {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #141928d5;
+  color: #9b8f8f;
+  cursor: pointer;
+}
+
+.active-send-data {
+  background-color: #0e32a9d5;
+  color: #fff;
+}
+
+/* FOOTER */
+
+footer {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  color: #333;
+}
+
+
+/* clases activadas desde JS */
+
+/* Clase para cambiar el color */
+.active-label {
+  color: #fff;
+  /* Cambia este color según prefieras */
+}

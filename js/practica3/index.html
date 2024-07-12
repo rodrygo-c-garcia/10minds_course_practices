@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Inscripción</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+
+    <main>
+        <h1>Formulario de Inscripción</h1>
+        <p>Por favor, introduzca sus datos en el siguiente formulario:</p>
+        <div>
+            <form>
+                <p>
+                    <label for="nameInput">Nombre completo: </label>
+                    <input id="nameInput" class="name__input" type="text" oninput="changeLabelColor(this, 'nameLabel')"
+                        required />
+                </p>
+                <p>
+                    <label for="dataInput">Fecha de Nacimiento: </label>
+                    <input id="dataInput" class="date__input" type="date" oninput="changeLabelColor(this, 'dateLabel')"
+                        required />
+                </p>
+                <p>
+                    <label id="sexoLabel">Sexo:</label>
+
+                    <input class="sexo__input" type="radio" name="sexo" id="hombre" required />
+                    <span for="hombre"
+                        onclick="document.getElementById('hombre').checked = true; changeLabelColor(document.getElementById('hombre'), 'sexoLabel');">Hombre</span>
+
+                    <input class="sexo__input" type="radio" name="sexo" id="mujer" />
+                    <span for="mujer"
+                        onclick="document.getElementById('mujer').checked = true; changeLabelColor(document.getElementById('mujer'), 'sexoLabel');">Mujer</span>
+                </p>
+                <p>
+                    <label for="termsCheckbox">Acepto los términos y condiciones</label>
+                    <input type="checkbox" id="termsCheckbox" onchange="changeLabelColor(this, 'termsLabel')"
+                        required />
+                </p>
+                <button>¡Inscribirse!</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <div id="slogan">
+                <h6>Hecho por Ariel Rodrigo Colque Garcia - Todos los derechos reservados</h6>
+            </div>
+        </div>
+    </footer>
+
+    <script src="practica3.js"></script>
+</body>
+
+</html>

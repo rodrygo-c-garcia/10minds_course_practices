@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Calculadora a medias</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__content">
+      <h1 class="header__title">Calculadora</h1>
+      <p class="header__description">Calculadora que resta, multiplica y calcula la potencia de dos numeros</p>
+    </div>
+  </header>
+  <main class="main">
+    <form class="form" id="form">
+      <div class="card">
+        <label for="number1" class="card__label">Numero 1:</label>
+        <input type="number" id="number1" name="number1" class="card__input" required>
+      </div>
+      <div class="card">
+        <label for="number2" class="card__label">Numero 2:</label>
+        <input type="number" id="number2" name="number2" class="card__input" required>
+      </div>
+      <div class="card">
+        <label for="operation" class="card__label">Operacion:</label>
+        <select id="operation" name="operation" class="card__select" required>
+          <option value="resta" class="card__option">Resta</option>
+          <option value="multiplicacion" class="card__option">Multiplicacion</option>
+          <option value="potencia" class="card__option">Potencia</option>
+        </select>
+      </div>
+      <div class="card">
+        <button type="button" class="card__button--calcular" onclick="calculate()">Calcular</button>
+      </div>
+    </form>
+
+    <div class="card card__result">
+      <h2 class="card__title--result">Resultado:</h2>
+      <p id="result" class="card__result--number">0</p>
+    </div>
+  </main>
+  <footer class="footer">
+    <p class="footer__text">Hecho por <a href="#" class="footer__link">Rodrygo</a></p>
+  </footer>
+  <script src="./script.js"></script>
+</body>
+
+</html>

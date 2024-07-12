@@ -1,0 +1,342 @@
+/* Reset de estilo básico */
+/* styles.css */
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: #333;
+  padding: 20px 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav__title {
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+}
+
+.nav__item {
+  margin-left: 20px;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav__link:hover {
+  color: #44bb1c;
+}
+
+.section__title {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+/* ACERCA DE NOSTROS */
+
+.about {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/portada.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 40px 0;
+  color: #fff;
+}
+
+
+.about h2 {
+  color: #fff;
+}
+
+.about__description {
+  font-size: 18px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.services {
+  background-color: #4caf4f;
+  padding: 40px 0;
+}
+
+.services__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.services__item {
+  flex: 1 1 calc(50% - 20px);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.251);
+}
+
+.services__image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.services__title {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.services__description {
+  font-size: 18px;
+  color: #666;
+}
+
+/* SECCION EQUIPO */
+
+.team {
+  background-color: #fff;
+  padding: 40px 0;
+}
+
+.team__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.team__item {
+  flex: 1 1 calc(50% - 20px);
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.team__image {
+  object-fit: cover;
+  object-position: center;
+  width: 60%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.team__name {
+  font-size: 22px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.team__role {
+  font-size: 18px;
+  color: #666;
+}
+
+/* testimonio seccion */
+
+.testimonials {
+  padding: 40px 0;
+  background-color: #4caf4f;
+}
+
+.testimonials__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.testimonial__item {
+  flex: 1 1 calc(50% - 20px);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.testimonial__image {
+  width: 40%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.testimonial__quote {
+  font-size: 18px;
+  font-style: italic;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.testimonial__author {
+  font-size: 16px;
+  color: #333;
+}
+
+/* contacto seccion */
+
+.contact {
+  background-color: #fff;
+  width: 100%;
+  margin: 10px auto;
+  padding: 40px 0;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1%;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.532);
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__label {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form__input,
+.form__textarea {
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+}
+
+.form__textarea {
+  height: 100px;
+  resize: none;
+}
+
+.form__button {
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form__button:hover {
+  background-color: #555;
+}
+
+.footer {
+  background-color: #333;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer__text {
+  font-size: 16px;
+  color: #fff;
+}
+
+/* Responsivo para tablets */
+@media (max-width: 768px) {
+  .nav__list {
+    flex-direction: column;
+  }
+
+  .services__item,
+  .team__item,
+  .testimonial__item {
+    flex: 1 1 100%;
+  }
+}
+
+/* Responsivo para móviles */
+@media (max-width: 480px) {
+  .nav__title {
+    font-size: 20px;
+  }
+
+  .nav__item {
+    margin-left: 10px;
+  }
+
+  .nav__link {
+    font-size: 14px;
+  }
+
+  .section__title {
+    font-size: 28px;
+  }
+
+  .about__description,
+  .services__description,
+  .team__role,
+  .testimonial__quote,
+  .testimonial__author {
+    font-size: 16px;
+  }
+
+  .services__title,
+  .team__name {
+    font-size: 20px;
+  }
+
+  .form__label {
+    font-size: 16px;
+  }
+
+  .form__input,
+  .form__textarea {
+    font-size: 14px;
+  }
+
+  .form__button {
+    font-size: 16px;
+  }
+
+  .footer__text {
+    font-size: 14px;
+  }
+}

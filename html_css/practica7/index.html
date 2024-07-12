@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanSucre - Panadería Artesanal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navegación -->
+    <header class="header">
+        <nav class="nav">
+            <h1 class="nav__title">PanSucre</h1>
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#about" class="nav__link">Sobre Nosotros</a></li>
+                <li class="nav__item"><a href="#services" class="nav__link">Servicios</a></li>
+                <li class="nav__item"><a href="#team" class="nav__link">Equipo</a></li>
+                <li class="nav__item"><a href="#testimonials" class="nav__link">Testimonios</a></li>
+                <li class="nav__item"><a href="#contact" class="nav__link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Sobre Nosotros -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section__title">Sobre Nosotros</h2>
+            <p class="about__description">En PanSucre, nos dedicamos a ofrecer productos de panadería artesanales con
+                los ingredientes más frescos y de la mejor calidad. Nuestro compromiso es llevar a tu mesa el sabor
+                tradicional y único de nuestros panes y pasteles. Fundada en 1985, nuestra panadería ha sido un
+                referente en la comunidad, destacándose por la innovación y el respeto a las recetas clásicas.</p>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section__title">Servicios</h2>
+            <div class="services__list">
+                <div class="services__item">
+                    <img src="img/servicio_mayor.jpg" alt="Servicio Mayorista" class="services__image">
+                    <h3 class="services__title">Servicio Mayorista</h3>
+                    <p class="services__description">Ofrecemos productos de panadería al por mayor para restaurantes,
+                        cafeterías y eventos especiales. Nuestro servicio mayorista garantiza la calidad y frescura de
+                        cada producto, adaptándonos a las necesidades de cada cliente. Contamos con una logística
+                        eficiente que asegura la entrega puntual de tus pedidos, permitiéndote ofrecer lo mejor a tus
+                        clientes.</p>
+                </div>
+                <div class="services__item">
+                    <img src="img/servicio_menor.jpg" alt="Servicio Minorista" class="services__image">
+                    <h3 class="services__title">Servicio Minorista</h3>
+                    <p class="services__description">Visítanos en nuestra tienda para disfrutar de nuestros productos
+                        directamente desde el horno. Cada día, horneamos una variedad de panes, pasteles y otros
+                        productos de repostería para satisfacer tus antojos. Además, ofrecemos una selección de
+                        productos sin gluten y opciones veganas para que todos puedan disfrutar del delicioso sabor de
+                        PanSucre.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Equipo -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="section__title">Equipo</h2>
+            <div class="team__list">
+                <div class="team__item">
+                    <img src="img/panadero.jpg" alt="Miembro del Equipo" class="team__image">
+                    <h3 class="team__name">Juan Pérez</h3>
+                    <p class="team__role">Panadero Principal</p>
+                </div>
+                <div class="team__item">
+                    <img src="img/pastelera.jpg" alt="Miembro del Equipo" class="team__image">
+                    <h3 class="team__name">María López</h3>
+                    <p class="team__role">Pastelera</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Testimonios -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section__title">Testimonios</h2>
+            <div class="testimonials__list">
+                <div class="testimonial__item">
+                    <img src="img/usuario2.jpg" alt="Cliente Satisfecho" class="testimonial__image">
+                    <blockquote class="testimonial__quote">"El mejor pan que he probado, siempre fresco y delicioso. La
+                        atención al cliente es excepcional y siempre me voy satisfecho. Recomiendo PanSucre a todos mis
+                        amigos y familiares."</blockquote>
+                    <p class="testimonial__author">- Ana García</p>
+                </div>
+                <div class="testimonial__item">
+                    <img src="img/usuario1.jpg" alt="Cliente Satisfecho" class="testimonial__image">
+                    <blockquote class="testimonial__quote">"Sus pasteles son increíbles, perfectos para cualquier
+                        ocasión. Desde cumpleaños hasta bodas, PanSucre siempre cumple con las expectativas. Sus
+                        productos son una delicia y la calidad es insuperable."</blockquote>
+                    <p class="testimonial__author">- Luis Fernández</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section__title">Contacto</h2>
+            <form action="#" method="post" class="contact__form">
+                <div class="form__group">
+                    <label for="name" class="form__label">Nombre:</label>
+                    <input type="text" id="name" name="name" class="form__input" required>
+                </div>
+                <div class="form__group">
+                    <label for="email" class="form__label">Email:</label>
+                    <input type="email" id="email" name="email" class="form__input" required>
+                </div>
+                <div class="form__group">
+                    <label for="message" class="form__label">Mensaje:</label>
+                    <textarea id="message" name="message" class="form__textarea" required></textarea>
+                </div>
+                <button type="submit" class="form__button">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">&copy; 2024 PanSucre. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-color: #0284d5;
+  --title-color: #ffffffa5;
+}
+
+body {
+  background: linear-gradient(90deg, #FFFF00 6%, #FFA500 25%, #F14444 45%, #D53567 55%, #9A109A 94%);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header,
+.footer {
+  padding: 1rem;
+  background-color: var(--font-color);
+  width: 100%;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: auto;
+}
+
+.header__title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--title-color);
+}
+
+
+/* MAIN */
+.main {
+  background: rgba(12, 103, 193, 0.31);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  border: 1px solid rgba(12, 103, 193, 0.3);
+  width: 50%;
+  padding: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+
+.card__label,
+.card__title--result {
+  display: block;
+  font-size: 1.2rem;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.card__input,
+.card__select {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  color: var(--font-color);
+  font-size: 1rem;
+  width: 50%;
+}
+
+.card__input:focus {
+  outline: none;
+  color: var(--font-color);
+  border: 1px solid var(--font-color);
+}
+
+.card__button--calcular {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(18, 61, 180);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 50%;
+}
+
+.card__button--calcular:hover {
+  background-color: rgb(18, 61, 180, 0.8);
+}
+
+.card__result {
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.card__title--result,
+.card__result--number {
+  flex: 1;
+}
+
+.card__title--result {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: right;
+}
+
+.card__result--number {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: #04ff04;
+  text-align: left;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer__text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--title-color);
+}
