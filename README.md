@@ -2,7 +2,7 @@
 
 ## 1. Introducción
 
-Bienvenido al repositorio de prácticas y ejercicios realizados en los cursos de desarrollo web de **10minds**. Este espacio tiene como objetivo centralizar los recursos de aprendizaje, facilitando la práctica y referencia futura.
+Bienvenido al repositorio de prácticas y ejercicios realizados en los cursos de desarrollo web de **[10minds](https://10minds.org "10minds")**. Este espacio tiene como objetivo centralizar los recursos de aprendizaje, facilitando la práctica y referencia futura.
 
 ## 2. Cursos Cubiertos
 
@@ -33,12 +33,3 @@ Este repositorio contiene principalmente:
 - **Herramientas Utilizadas**: Referencias a las herramientas y tecnologías empleadas en los cursos.
 - **Recursos Externos**: Sitios web, artículos y tutoriales recomendados para complementar el aprendizaje.
 
-## 5. Etiquetas
-
-- #10minds
-- #desarrollo-web
-- #HTML
-- #CSS
-- #JavaScript
-- #prácticas
-- #ejercicios
