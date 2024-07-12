@@ -23,34 +23,50 @@
   <main class="main">
     <section class="main__section section section--guardar">
       <h2 class="section__title">Guardar Animales</h2>
-      <form action="#" class="section__form form">
+      <form action="#" class="section__form form" id="form">
         <div class="form__card card">
           <label for="animal" class="card__label">Nombre Animal:</label>
-          <input type="text" id="animal" name="animal" class="card__input" placeholder="Nombre del Animal">
+          <input type="text" id="animal" name="animal" class="card__input">
         </div>
         <div class="form__group group card">
           <p class="group__question">¿Está en peligro de extinción?</p>
-          <label for="peligro" class="group__label">Sí</label>
-          <input type="radio" name="extincion" class="group__input group__input--radio">
-          <label for="peligro" class="group__label">No</label>
-          <input type="radio" name="extincion" class="group__input group__input--radio">
+          <div class="card__radio">
+            <input type="radio" name="extincion" class="group__input group__input--radio" id="siPeligro">
+            <span class="group__text" onclick="document.getElementById('siPeligro').checked = true;">Sí</span>
+            <input type="radio" name="extincion" class="group__input group__input--radio" id="noPeligro">
+            <span class="group__text" onclick="document.getElementById('noPeligro').checked = true;">No</span>
+          </div>
         </div>
-        <div class="form__button card">
-          <button type="submit" class="form__button button--guardar">Guardar</button>
-          <button type="submit" class="form__button button--eliminar">Eliminar Animales</button>
+        <div class="card__button card">
+          <button class="form__button button--guardar" onclick="saveAnimal(event)">Guardar</button>
+          <button class="form__button button--eliminar" onclick="deleteData(event)">Eliminar Animales</button>
         </div>
       </form>
     </section>
     <section class="main__section section section--listar">
-      <h2 class="section__title">Animales en Peligro de Extinción</h2>
-      <div class="listar__card card"></div>
+      <h2 class="section__title">Lista de Animales</h2>
+      <div class="listar__card card" id="listarCard">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>En Peligro</th>
+            </tr>
+          </thead>
+          <tbody id="listarAnimales">
+            <tr id="filaInicial" class="fila__inicial">
+              <td colspan="2" class="item__inicial" id="itemInicial">No tienes animales guardados.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <!-- lista de animales -->
     </section>
 
   </main>
 
   <footer class="footer">
-    <p class="footer__text">Todos los derechos reservados &copy; 2024</p>
+    <p class="footer__text">Todos los derechos reservados &copy;Rodrygo 2024</p>
   </footer>
 
   <script src="./script.js"></script>
