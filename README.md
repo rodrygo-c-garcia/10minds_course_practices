@@ -6,14 +6,14 @@ Bienvenido al repositorio de prácticas y ejercicios realizados en los cursos de
 
 ## 2. Cursos Cubiertos
 
-### Desarrollo Web con HTML y CSS (Nivel Intermedio)
+### Desarrollo Web con HTML y CSS
 En este curso aprenderás a crear sitios web completos y funcionales utilizando HTML y CSS. Algunos de los temas cubiertos incluyen:
 - Estructuración de páginas web
 - Aplicación de estilos
 - Diseño responsivo
 - Y más
 
-### JavaScript (Nivel Avanzado)
+### JavaScript
 Este curso profundiza en las capacidades de JavaScript, permitiéndote crear aplicaciones web interactivas y dinámicas. Aprenderás sobre:
 - Programación orientada a objetos
 - Manejo de eventos
