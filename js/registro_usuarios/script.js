@@ -22,18 +22,22 @@ function changeOption() {
 
   if ($forms.length === 0) return;
 
+  const isRegistering = $button.textContent === "Iniciar Sesion";
+  const buttonText = isRegistering ? "Registrarme" : "Iniciar Sesion";
+  const buttonLoginClass = "options__button--login";
+  const buttonRegisterClass = "options__button--register";
+
   $main.classList.add("hidden");
 
   setTimeout(() => {
     $forms.forEach((element) => {
-      if (element.classList.contains("show__none")) {
-        element.classList.toggle("show__none");
-        $button.textContent = "Registrarme";
-      } else {
-        element.classList.toggle("show__none");
-        $button.textContent = "Iniciar Sesion";
-      }
+      element.classList.toggle("show__none");
     });
+
+    $button.textContent = buttonText;
+    $button.classList.toggle(buttonLoginClass, isRegistering);
+    $button.classList.toggle(buttonRegisterClass, !isRegistering);
+
     $main.classList.remove("hidden");
   }, 400);
 }
