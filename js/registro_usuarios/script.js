@@ -1,29 +1,13 @@
-function calcular(operacion, num1, num2) {
-  let resultado;
-
-  switch (operacion) {
-    case "sumar":
-      resultado = num1 + num2;
-      break;
-    case "restar":
-      resultado = num1 - num2;
-      break;
-    case "multiplicar":
-      resultado = num1 * num2;
-      break;
-    case "dividir":
-      resultado = num1 / num2;
-      break;
-    default:
-      console.log("Opción inválida");
-      return;
+function changeColorLabel(input) {
+  const $label = document.querySelector(`label[for="${input.id}"]`);
+  if ($label) {
+    $label.style.scale = "1.1";
+    $label.style.color = "rgba(11, 37, 89, 0.81)";
   }
 
-  console.log(`El resultado de ${operacion} ${num1} y ${num2} es ${resultado}`);
+  // Agregar evento para revertir el color cuando el input pierde el foco
+  input.onblur = function () {
+    $label.style.scale = "1";
+    $label.style.color = "#fff"; // Revertir al color original (o quitar el estilo)
+  };
 }
-
-// Ejemplos de uso
-calcular("sumar", 5, 3); // El resultado de sumar 5 y 3 es 8
-calcular("restar", 10, 4); // El resultado de restar 10 y 4 es 6
-calcular("multiplicar", 2, 6); // El resultado de multiplicar 2 y 6 es 12
-calcular("dividir", 8, 2); // El resultado de dividir 8 y 2 es 4
