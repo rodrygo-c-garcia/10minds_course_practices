@@ -12,6 +12,10 @@ body {
   background: linear-gradient(to left, #283593, #1976d2);
   height: 100vh;
   font-family: "Montserrat", sans-serif;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Background circles start */
@@ -22,6 +26,7 @@ body {
 }
 
 .circles {
+  z-index: -1;
   position: absolute;
   height: 270px;
   width: 450px;
@@ -46,3 +51,113 @@ body {
 }
 
 /* Background circles end */
+
+.main {
+  border-radius: 16px;
+  width: 60%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* From https://css.glass */
+  background: rgba(11, 37, 89, 0.81);
+  border-radius: 16px;
+}
+
+.main__form,
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+.main__register {
+  border-radius: 16px 0 0 16px;
+  /* From https://css.glass */
+  background: rgba(159, 193, 49, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.7px);
+  -webkit-backdrop-filter: blur(2.7px);
+  border: 1px solid rgba(159, 193, 49, 1);
+}
+
+.options {
+  width: 50%;
+}
+
+.main__login {
+  display: none;
+  border-radius: 0 16px 16px 0;
+  /* From https://css.glass */
+  background: rgba(15, 194, 192, 0.69);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.7px);
+  -webkit-backdrop-filter: blur(2.7px);
+  border: 1px solid rgba(15, 194, 192, 1);
+}
+
+.form {
+  width: 100%;
+}
+
+/* REGISTER */
+.form__title {
+  margin-bottom: 25px;
+  color: #ffffffbf;
+  text-align: center;
+}
+
+.form__group {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.form__label,
+.form__input {
+  font-size: 14px;
+}
+
+.form__label {
+  display: block;
+  margin-bottom: 5px;
+  color: #fff;
+  width: 50%;
+}
+
+.form__input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(11, 37, 89, 0.81);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #333333ca;
+}
+
+.form__input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(11, 37, 89, 0.81);
+}
+
+.form__button {
+  padding: 10px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form__button:hover {
+  background-color: #003d82;
+}
