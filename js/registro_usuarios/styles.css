@@ -63,6 +63,12 @@ body {
   /* From https://css.glass */
   background: rgba(11, 37, 89, 0.81);
   border-radius: 16px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.main.hidden {
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .main__form,
@@ -77,9 +83,13 @@ body {
   color: #fff;
   font-family: "Montserrat", sans-serif;
 }
+
+.options {
+  padding: 0;
+}
+
 .main__register {
   border-radius: 16px 0 0 16px;
-  /* From https://css.glass */
   background: rgba(159, 193, 49, 0.5);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2.7px);
@@ -91,10 +101,16 @@ body {
   width: 50%;
 }
 
-.main__login {
+.show__none {
   display: none;
+}
+
+.show {
+  display: block;
+}
+
+.main__login {
   border-radius: 0 16px 16px 0;
-  /* From https://css.glass */
   background: rgba(15, 194, 192, 0.69);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2.7px);
@@ -131,7 +147,7 @@ body {
   display: block;
   margin-bottom: 5px;
   color: #fff;
-  width: 50%;
+  width: 25%;
 }
 
 .form__input {
@@ -149,15 +165,36 @@ body {
 }
 
 .form__button {
+  margin-top: 20px;
+  width: 50%;
   padding: 10px;
-  background-color: #0056b3;
+  background-color: rgba(11, 37, 89, 0.81);
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  font-weight: 600;
 }
 
 .form__button:hover {
   background-color: #003d82;
+}
+
+.options__button--login {
+  color: rgba(11, 37, 89, 0.9);
+  background-color: rgba(159, 193, 49, 0.8);
+}
+
+.options__button--login:hover {
+  background-color: rgba(159, 193, 49, 1);
+}
+
+.options__button--register {
+  color: rgba(11, 37, 89, 0.9);
+  background-color: rgba(15, 194, 192, 0.69);
+}
+
+.options__button--register:hover {
+  background-color: rgba(15, 194, 192, 0.8);
 }
