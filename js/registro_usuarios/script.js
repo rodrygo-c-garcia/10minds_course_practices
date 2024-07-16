@@ -44,15 +44,16 @@ function changeOption() {
 }
 
 // funcion para registrar usuario
-function registerUser(e) {
+function registerUser(e, ancestorSelector) {
   e.preventDefault();
+  const $ancestor = document.getElementById(ancestorSelector);
 
-  const nombre = document.getElementById("name").value;
-  const apellido = document.getElementById("apellido").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  const nombre = $ancestor.querySelector("#name").value;
+  const apellido = $ancestor.querySelector("#apellido").value;
+  const email = $ancestor.querySelector("#email").value;
+  const password = $ancestor.querySelector("#password").value;
 
-  if (validateInputs(nombre, apellido, email, password)) {
+  if (validateInputs(nombre, apellido, email, password, "register")) {
     if (!email_repetido(email)) {
       const usuario = new Usuario(nombre, apellido, email, password);
       console.log(usuario);
