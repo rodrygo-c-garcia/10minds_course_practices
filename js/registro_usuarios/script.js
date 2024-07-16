@@ -16,6 +16,7 @@ function changeColorLabel(input, ancestorSelector) {
 }
 
 function changeOption() {
+  closeModal();
   const $forms = document.querySelectorAll(".main__form");
   const $main = document.getElementById("main");
   const $button = document.getElementById("buttonOption");
@@ -56,7 +57,9 @@ function registerUser(e) {
       const usuario = new Usuario(nombre, apellido, email, password);
       console.log(usuario);
       localStorage.setItem(email, JSON.stringify(usuario));
-      openModal(usuario);
+
+      let htmlContent = formingHTML(usuario, "register");
+      openModal(htmlContent);
 
       // Limpiar formulario
       const form = e.target.closest("form");
@@ -64,10 +67,46 @@ function registerUser(e) {
         form.reset();
       }
     } else {
-      alert("El email ya esta registrado");
+      let htmlContent = formingHTML(email, "email");
+      openModal(htmlContent);
     }
   } else {
     alert("Todos los campos son obligatorios");
+  }
+}
+
+function formingHTML(userData, option) {
+  if (option === "login") {
+    return `
+      <h2 class="form__title">Bienvenido al Sistema</h2>
+      <p class="form__label data__label"><strong>Email:</strong> ${userData.email}</p>
+    `;
+  } else if (option === "register") {
+    return `
+      <h2 class="form__title">Tus Datos Registrados</h2>
+      <p class="form__label data__label"><strong>Nombre:</strong> ${userData.nombre}</p>
+      <p class="form__label data__label"><strong>Apellido:</strong> ${userData.apellido}</p>
+      <p class="form__label data__label"><strong>Email:</strong> ${userData.email}</p>
+      <button
+          class="form__button options__button--login"
+          id="buttonOption"
+          onclick="changeOption() "
+        >
+          Iniciar Sesion
+        </button>
+    `;
+  } else if (option === "email") {
+    return `
+      <h2 class="form__title">Email ya registrado</h2>
+      <p class="form__label data__label"><strong>Email:</strong> ${userData}</p>
+      <button
+          class="form__button options__button--login"
+          id="buttonOption"
+          onclick="changeOption() "
+        >
+          Iniciar Sesion
+        </button>
+    `;
   }
 }
 
@@ -88,18 +127,13 @@ function validateInputs(nombre, apellido, email, password) {
 }
 
 // Función para abrir el modal
-function openModal(userData) {
+function openModal(htmlContent) {
   const modal = document.getElementById("myModal");
   modal.style.display = "block";
 
   // Mostrar datos del usuario en el modal
   const modalContent = document.getElementById("modalContent");
-  modalContent.innerHTML = `
-    <h2 class="form__title">Tus Datos Registrados</h2>
-    <p class="form__label data__label"><strong>Nombre:</strong> ${userData.nombre}</p>
-    <p class="form__label data__label"><strong>Apellido:</strong> ${userData.apellido}</p>
-    <p class="form__label data__label"><strong>Email:</strong> ${userData.email}</p>
-  `;
+  modalContent.innerHTML = htmlContent;
 }
 
 // Función para cerrar el modal
