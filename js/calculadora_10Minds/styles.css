@@ -1,0 +1,135 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #080710;
+}
+
+/* CSS backgroun Glass */
+.background {
+  width: 530px;
+  height: 320px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.background .shape {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.shape:first-child {
+  background: linear-gradient(#1845ad, #23a2f6);
+  left: -80px;
+  top: -80px;
+}
+
+.shape:last-child {
+  background: linear-gradient(to right, #ff512f, #f09819);
+  right: -30px;
+  bottom: -80px;
+}
+/* end css Glass */
+
+/* css main */
+.main {
+  height: 90%;
+  width: 25%;
+  background-color: rgba(255, 255, 255, 0.13);
+
+  /* center main */
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main * {
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+
+.title__calculator {
+  text-align: center;
+  font-size: 1em;
+}
+
+.title__company {
+  color: orange;
+}
+
+/* calculadora */
+.output {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.output__operation,
+.output__result {
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-size: 50px;
+  width: 100%;
+}
+
+.output__operation {
+  font-size: 25px;
+  color: #ffffff;
+  opacity: 0.5;
+  height: 70%;
+}
+
+.display {
+  grid-column: span 4;
+  grid-row: span 2;
+  color: white;
+  text-align: right;
+  padding: 10px;
+  font-size: 2em;
+  width: 100%;
+  height: 100%;
+}
+
+.button {
+  padding: 20px;
+  font-size: 1.5em;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  text-align: center;
+}
