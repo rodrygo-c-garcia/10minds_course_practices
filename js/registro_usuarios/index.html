@@ -68,7 +68,7 @@
           <button
             class="form__button"
             id="formButtonRegister"
-            onclick="registerUser(event)"
+            onclick="registerUser(event, 'formRegister')"
           >
             Registrarme
           </button>
@@ -110,7 +110,11 @@
               required
             />
           </div>
-          <button type="submit" class="form__button" onclick="loginUser(event)">
+          <button
+            type="submit"
+            class="form__button"
+            onclick="loginUser(event, 'formLogin')"
+          >
             Iniciar Sesion
           </button>
         </form>
