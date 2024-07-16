@@ -23,7 +23,6 @@ function changeOption() {
   if ($forms.length === 0) return;
 
   const isRegistering = $button.textContent.trim() === "Iniciar Sesion";
-  console.log(isRegistering);
   const buttonText = isRegistering ? "Registrarme" : "Iniciar Sesion";
   const buttonLoginClass = "options__button--login";
   const buttonRegisterClass = "options__button--register";
@@ -43,14 +42,68 @@ function changeOption() {
   }, 400);
 }
 
-function registerUser(event) {
-  event.preventDefault();
+// funcion para registrar usuario
+function registerUser(e) {
+  e.preventDefault();
 
   const nombre = document.getElementById("name").value;
   const apellido = document.getElementById("apellido").value;
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  const usuario = new Usuario(nombre, apellido, email, password);
-  document.getElementById("formRegister").reset();
+  if (validateInputs(nombre, apellido, email, password)) {
+    if (!email_repetido(email)) {
+      const usuario = new Usuario(nombre, apellido, email, password);
+      console.log(usuario);
+      localStorage.setItem(email, JSON.stringify(usuario));
+      openModal(usuario);
+
+      // Limpiar formulario
+      const form = e.target.closest("form");
+      if (form) {
+        form.reset();
+      }
+    } else {
+      alert("El email ya esta registrado");
+    }
+  } else {
+    alert("Todos los campos son obligatorios");
+  }
+}
+
+// Función para validar si el email ya está registrado
+function email_repetido(email) {
+  let repetido = false;
+  for (let i = 0; i < localStorage.length; i++) {
+    if (localStorage.key(i) === email) {
+      repetido = true;
+      break;
+    }
+  }
+  return repetido;
+}
+
+function validateInputs(nombre, apellido, email, password) {
+  return nombre && apellido && email && password;
+}
+
+// Función para abrir el modal
+function openModal(userData) {
+  const modal = document.getElementById("myModal");
+  modal.style.display = "block";
+
+  // Mostrar datos del usuario en el modal
+  const modalContent = document.getElementById("modalContent");
+  modalContent.innerHTML = `
+    <h2 class="form__title">Tus Datos Registrados</h2>
+    <p class="form__label data__label"><strong>Nombre:</strong> ${userData.nombre}</p>
+    <p class="form__label data__label"><strong>Apellido:</strong> ${userData.apellido}</p>
+    <p class="form__label data__label"><strong>Email:</strong> ${userData.email}</p>
+  `;
+}
+
+// Función para cerrar el modal
+function closeModal() {
+  const modal = document.getElementById("myModal");
+  modal.style.display = "none";
 }
