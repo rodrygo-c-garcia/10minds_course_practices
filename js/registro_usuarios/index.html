@@ -26,6 +26,7 @@
               name="name"
               placeholder="Ej. Roberto Carlos"
               onfocus="changeColorLabel(this, 'formRegister')"
+              required
             />
           </div>
           <div class="form__group">
@@ -37,6 +38,7 @@
               name="apellido"
               placeholder="Ej. Perez Sosa"
               onfocus="changeColorLabel(this, 'formRegister')"
+              required
             />
           </div>
           <div class="form__group">
@@ -48,6 +50,7 @@
               name="email"
               placeholder="Ej. zarate@gmail.com"
               onfocus="changeColorLabel(this, 'formRegister')"
+              required
             />
           </div>
           <div class="form__group">
@@ -59,9 +62,16 @@
               name="password"
               placeholder="Ej. 123456"
               onfocus="changeColorLabel(this, 'formRegister')"
+              required
             />
           </div>
-          <button type="submit" class="form__button">Registrarme</button>
+          <button
+            class="form__button"
+            id="formButtonRegister"
+            onclick="registerUser(this)"
+          >
+            Registrarme
+          </button>
         </form>
       </div>
       <div class="options">
@@ -85,6 +95,7 @@
               name="email"
               placeholder="Ej. suarez@gmail.com"
               onfocus="changeColorLabel(this, 'formLogin')"
+              required
             />
           </div>
           <div class="form__group">
@@ -96,6 +107,7 @@
               name="password"
               placeholder="Ej. 12345"
               onfocus="changeColorLabel(this, 'formLogin')"
+              required
             />
           </div>
           <button type="submit" class="form__button">Iniciar Sesion</button>
@@ -103,6 +115,7 @@
       </div>
     </main>
 
+    <script src="./user.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>

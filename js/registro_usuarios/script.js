@@ -17,12 +17,13 @@ function changeColorLabel(input, ancestorSelector) {
 
 function changeOption() {
   const $forms = document.querySelectorAll(".main__form");
-  const $button = document.getElementById("buttonOption");
   const $main = document.getElementById("main");
+  const $button = document.getElementById("buttonOption");
 
   if ($forms.length === 0) return;
 
-  const isRegistering = $button.textContent === "Iniciar Sesion";
+  const isRegistering = $button.textContent.trim() === "Iniciar Sesion";
+  console.log(isRegistering);
   const buttonText = isRegistering ? "Registrarme" : "Iniciar Sesion";
   const buttonLoginClass = "options__button--login";
   const buttonRegisterClass = "options__button--register";
@@ -35,9 +36,21 @@ function changeOption() {
     });
 
     $button.textContent = buttonText;
-    $button.classList.toggle(buttonLoginClass, isRegistering);
-    $button.classList.toggle(buttonRegisterClass, !isRegistering);
+    $button.classList.toggle(buttonRegisterClass, isRegistering);
+    $button.classList.toggle(buttonLoginClass, !isRegistering);
 
     $main.classList.remove("hidden");
   }, 400);
+}
+
+function registerUser(event) {
+  event.preventDefault();
+
+  const nombre = document.getElementById("name").value;
+  const apellido = document.getElementById("apellido").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  const usuario = new Usuario(nombre, apellido, email, password);
+  document.getElementById("formRegister").reset();
 }
