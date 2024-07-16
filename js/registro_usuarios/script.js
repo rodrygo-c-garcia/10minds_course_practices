@@ -61,17 +61,62 @@ function registerUser(e) {
       let htmlContent = formingHTML(usuario, "register");
       openModal(htmlContent);
 
-      // Limpiar formulario
-      const form = e.target.closest("form");
-      if (form) {
-        form.reset();
-      }
+      clearForm(e);
     } else {
-      let htmlContent = formingHTML(email, "email");
+      let htmlContent = formingHTML(email, "emailRepetido");
       openModal(htmlContent);
+      clearForm(e);
     }
   } else {
     alert("Todos los campos son obligatorios");
+  }
+}
+
+// Función para iniciar sesión
+function loginUser(e, ancestorSelector) {
+  e.preventDefault();
+  const $ancestor = document.getElementById(ancestorSelector);
+
+  const email = $ancestor.querySelector("#email").value;
+  const password = $ancestor.querySelector("#password").value;
+
+  if (validateInputs(null, null, email, password, "login")) {
+    if (userExists(email, password) === "correctPassword") {
+      const usuario = JSON.parse(localStorage.getItem(email));
+      let htmlContent = formingHTML(usuario, "login");
+      openModal(htmlContent);
+      clearForm(e);
+    } else if (userExists(email, password) === "incorrectPassword") {
+      let htmlContent = formingHTML(email, "incorrectPassword");
+      openModal(htmlContent);
+    } else {
+      let htmlContent = formingHTML(email, "noUser");
+      openModal(htmlContent);
+      clearForm(e);
+    }
+  } else {
+    alert("Todos los campos son obligatorios");
+  }
+}
+
+function clearForm(e) {
+  const form = e.target.closest("form");
+  if (form) {
+    form.reset();
+  }
+}
+
+// Función para validar si el usuario existe
+function userExists(email, password) {
+  const user = JSON.parse(localStorage.getItem(email));
+  if (user) {
+    if (user.password === password) {
+      return "correctPassword";
+    } else {
+      return "incorrectPassword";
+    }
+  } else {
+    return "noUser";
   }
 }
 
