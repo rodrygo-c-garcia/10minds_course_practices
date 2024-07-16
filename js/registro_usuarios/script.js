@@ -141,7 +141,7 @@ function formingHTML(userData, option) {
           Iniciar Sesion
         </button>
     `;
-  } else if (option === "email") {
+  } else if (option === "emailRepetido") {
     return `
       <h2 class="form__title">Email ya registrado</h2>
       <p class="form__label data__label"><strong>Email:</strong> ${userData}</p>
@@ -152,6 +152,22 @@ function formingHTML(userData, option) {
         >
           Iniciar Sesion
         </button>
+    `;
+  } else if (option === "noUser") {
+    return `
+      <h2 class="form__title">Usuario no registrado</h2>
+      <p class="form__label data__label"><strong>Email:</strong> ${userData}</p>
+      <button
+          class="form__button options__button--login"
+          id="buttonOption"
+          onclick="changeOption() "
+        >
+          Registrarme
+        </button>
+    `;
+  } else if (option === "incorrectPassword") {
+    return `
+      <h2 class="form__title">Contraseña Incorrecta</h2>
     `;
   }
 }
@@ -168,8 +184,10 @@ function email_repetido(email) {
   return repetido;
 }
 
-function validateInputs(nombre, apellido, email, password) {
-  return nombre && apellido && email && password;
+function validateInputs(nombre, apellido, email, password, option) {
+  return option === "register"
+    ? nombre && apellido && email && password
+    : email && password;
 }
 
 // Función para abrir el modal
