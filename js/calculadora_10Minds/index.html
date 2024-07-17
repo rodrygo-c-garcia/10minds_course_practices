@@ -1,56 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <title>Calcualdora 10Minds</title>
-  </head>
-  <body>
-    <div class="background">
-      <div class="shape"></div>
-      <div class="shape"></div>
-    </div>
 
-    <main class="main">
-      <div class="card__header">
-        <button class="button__historial">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+  <title>Calcualdora 10Minds</title>
+</head>
+
+<body>
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+
+  <main class="main">
+    <div class="card__header">
+      <button class="button__historial" onclick="toggleHistorial()">
+        <img src="./img/clock-rotate-left-solid.svg" alt="Historial" width="20" height="20">
+      </button>
+      <h1 class="title__calculator">
+        Calculadora <span class="title__company">10Minds</span>
+    </div>
+    </h1>
+    <div class="output">
+      <div class="output__operation">6 - 6</div>
+      <div class="output__result">0</div>
+    </div>
+    <div class="calculator">
+      <button class="button especial">C</button>
+      <button class="button especial">+/-</button>
+      <button class="button especial">%</button>
+      <button class="button operation">/</button>
+      <button class="button">7</button>
+      <button class="button">8</button>
+      <button class="button">9</button>
+      <button class="button operation">x</button>
+      <button class="button">4</button>
+      <button class="button">5</button>
+      <button class="button">6</button>
+      <button class="button operation">-</button>
+      <button class="button">1</button>
+      <button class="button">2</button>
+      <button class="button">3</button>
+      <button class="button operation">+</button>
+      <button class="button button__cero">0</button>
+      <button class="button">.</button>
+      <button class="button operation">=</button>
+    </div>
+    <div class="historial__card" id="historialCard">
+      <div class="card__button--historial">
+        <button class="button__historial" onclick="toggleHistorial()">
           <img src="./img/clock-rotate-left-solid.svg" alt="Historial" width="20" height="20">
         </button>
         <h1 class="title__calculator">
           Calculadora <span class="title__company">10Minds</span>
       </div>
-      </h1>
-      <div class="output">
-        <div class="output__operation">6 - 6</div>
-        <div class="output__result">0</div>
+      <div class="historial">
+        <h2>Historial</h2>
+        <ul>
+          <li>6 - 6 = 0</li>
+          <!-- Agrega más elementos de historial aquí -->
+        </ul>
       </div>
-      <div class="calculator">
-        <button class="button especial">C</button>
-        <button class="button especial">+/-</button>
-        <button class="button especial">%</button>
-        <button class="button operation">/</button>
-        <button class="button">7</button>
-        <button class="button">8</button>
-        <button class="button">9</button>
-        <button class="button operation">x</button>
-        <button class="button">4</button>
-        <button class="button">5</button>
-        <button class="button">6</button>
-        <button class="button operation">-</button>
-        <button class="button">1</button>
-        <button class="button">2</button>
-        <button class="button">3</button>
-        <button class="button operation">+</button>
-        <button class="button button__cero">0</button>
-        <button class="button">.</button>
-        <button class="button operation">=</button>
-      </div>
-    </main>
-    <script src="./main.js"></script>
-  </body>
+    </div>
+  </main>
+
+  <script src="./main.js"></script>
+</body>
+
 </html>
