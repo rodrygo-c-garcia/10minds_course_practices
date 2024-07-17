@@ -208,17 +208,37 @@ body {
   padding: 20px 15px;
 }
 
-.historial__card h2 {
-  margin-bottom: 20px;
+/* HISTORIAL */
+.historial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px 0;
+  width: 100%;
+  height: 90%;
 }
 
-.historial__card ul {
+.historial__list {
+  overflow-y: auto;
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
-.historial__card li {
+.historial__item {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+.first__item,
+.historial__item--content {
   background: #444;
   padding: 10px;
   margin: 5px 0;
@@ -228,11 +248,27 @@ body {
   color: #fff;
 }
 
-/* HISTORIAL */
-
-.historial {
+.historial__button {
+  padding: 10px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.historial__button--restore {
+  background: linear-gradient(120deg, #3b4e63 10%, #6e85aa 60%);
+}
+
+.historial__button--restore:hover {
+  background: linear-gradient(120deg, #5a799c 10%, #2073f9 60%);
+}
+
+.historial__button--delete {
+  background: linear-gradient(120deg, #442d10 10%, #d8310f 60%);
+}
+
+.historial__button--delete:hover {
+  background: linear-gradient(120deg, #81541c 10%, #f1411e 60%);
 }
