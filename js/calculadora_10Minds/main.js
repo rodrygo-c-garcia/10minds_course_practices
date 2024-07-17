@@ -3,3 +3,10 @@ function toggleHistorial() {
   const isVisible = historial.style.left === "0%";
   historial.style.left = isVisible ? "100%" : "0%";
 }
+
+function selectButton(data) {
+  console.log(data);
+  if (data !== "0") {
+    document.getElementById("inputData").textContent += data;
+  }
+}
