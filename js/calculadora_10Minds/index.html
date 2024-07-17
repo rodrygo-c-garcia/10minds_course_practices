@@ -55,12 +55,20 @@
           <img src="./img/clock-rotate-left-solid.svg" alt="Historial" width="20" height="20">
         </button>
         <h1 class="title__calculator">
-          Calculadora <span class="title__company">10Minds</span>
+          <span class="title__company">Historial</span>
       </div>
       <div class="historial">
-        <h2>Historial</h2>
-        <ul>
-          <li>6 - 6 = 0</li>
+        <ul class="historial__list">
+          <li class="historial__item first__item">No tienes Historial</li>
+          <li class="historial__item">
+            <p class="historial__item--content">3 + 3 = 6</p> <button
+              class="historial__button historial__button--restore" onclick="toggleHistorial()">
+              <img src="./img/window-restore-solid.svg" alt="Restore" width="20" height="20">
+            </button>
+            <button class="historial__button historial__button--delete" onclick="toggleHistorial()">
+              <img src="./img/delete-left-solid.svg" alt="Delete" width="20" height="20">
+            </button>
+          </li>
           <!-- Agrega más elementos de historial aquí -->
         </ul>
       </div>
