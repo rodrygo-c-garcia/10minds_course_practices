@@ -44,16 +44,13 @@ body {
 
 /* css main */
 .main {
-  height: 90%;
-  width: 25%;
-  background-color: rgba(255, 255, 255, 0.13);
-
+  background-color: #202e3e77;
   /* center main */
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-
+  min-height: 90vh;
   border-radius: 30px;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.1);
@@ -104,24 +101,29 @@ body {
 }
 
 .title__company {
-  color: orange;
+  color: #f09819;
 }
 
 /* calculadora */
-.output {
+.output,
+.calculator {
   flex: 1;
+  margin: 10px 0;
+  overflow: auto;
+}
+
+.output {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 10px 0;
 }
 
 .calculator {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-  width: 100%;
-  margin: 0 auto;
+  grid-gap: 6px;
+  padding: 10px;
+  /* background-color: #f09819; */
 }
 
 .output__operation,
@@ -132,31 +134,55 @@ body {
   align-items: flex-end;
   font-size: 50px;
   width: 100%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 200;
 }
 
 .output__operation {
+  flex: 1;
   font-size: 25px;
   color: #ffffff;
   opacity: 0.5;
-  height: 70%;
 }
 
-.display {
-  grid-column: span 4;
-  grid-row: span 2;
-  color: white;
-  text-align: right;
-  padding: 10px;
-  font-size: 2em;
-  width: 100%;
-  height: 100%;
-}
-
+/* botones calculadora */
 .button {
-  padding: 20px;
-  font-size: 1.5em;
-  background: #f0f0f0;
-  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-family: sans-serif;
+  background: linear-gradient(145deg, rgb(14, 18, 30), #184c78);
+  box-shadow: inset 1px 0 2px #fffcfc85, inset -2px -2px 1px #242121d5,
+    2px 2px 5px 0 rgba(0, 0, 0, 0.4);
+  outline: none;
   cursor: pointer;
-  text-align: center;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 15px;
+  font-weight: 400;
+}
+
+.operation {
+  background: linear-gradient(120deg, #812808 10%, #fa4200 60%);
+}
+
+.especial {
+  background: linear-gradient(120deg, #2b3547 10%, #495b7c 60%);
+}
+
+.button__cero {
+  border-radius: 20px;
+  grid-column: span 2;
+}
+
+.button:hover {
+  background: linear-gradient(120deg, #101f3c 10%, #377fdc 60%);
+}
+
+.operation:hover {
+  background: linear-gradient(120deg, #84530e 10%, #f09819 60%);
+}
+
+.especial:hover {
+  background: linear-gradient(120deg, #3b4e63 10%, #6e85aa 60%);
 }
