@@ -51,6 +51,7 @@ body {
   top: 50%;
   left: 50%;
   min-height: 90vh;
+  width: 25%;
   border-radius: 30px;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.1);
@@ -114,38 +115,47 @@ body {
   overflow: auto;
 }
 
-.output {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 .calculator {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 6px;
   padding: 10px;
-  /* background-color: #f09819; */
+}
+
+/* pantalla de la calculadora */
+
+.output {
+  width: 100%;
+  height: 45px;
+  margin: 0;
 }
 
 .output__operation,
-.output__result {
-  text-align: right;
+.input__data {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  font-size: 50px;
-  width: 100%;
+  overflow-x: auto;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-weight: 200;
 }
 
 .output__operation {
-  flex: 1;
-  font-size: 25px;
-  color: #ffffff;
-  opacity: 0.5;
+  font-size: 30px;
+  width: 100%;
+  height: 90px;
+  font-weight: 200;
+  color: #806e6e;
+}
+
+.input__data {
+  border-top: 1px solid #855959;
+  text-align: right;
+  cursor: text;
+  width: 100%;
+  height: 70px;
+  font-size: 45px;
+  font-weight: 300;
 }
 
 /* botones calculadora */
@@ -218,6 +228,8 @@ body {
   height: 90%;
 }
 
+/* css para la lista de historial */
+
 .historial__list {
   overflow-y: auto;
   list-style: none;
@@ -239,7 +251,7 @@ body {
 
 .first__item,
 .historial__item--content {
-  background: #444;
+  background: #b06f14;
   padding: 10px;
   margin: 5px 0;
   width: 100%;
