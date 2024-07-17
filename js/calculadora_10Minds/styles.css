@@ -73,6 +73,31 @@ body {
   border: none;
 }
 
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.button__historial {
+  background: linear-gradient(120deg, #102e44 10%, #184b78 60%);
+  padding: 7px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px 15px 15px 0;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 400;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.button__historial svg {
+  fill: #fff;
+}
+
 .title__calculator {
   text-align: center;
   font-size: 1em;
