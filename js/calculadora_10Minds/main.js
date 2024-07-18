@@ -143,3 +143,37 @@ $deleteButton.addEventListener("mouseup", function () {
 $deleteButton.addEventListener("mouseleave", function () {
   clearTimeout(deleteTimer);
 });
+
+function createItem(id, input, result) {
+  return `<li class="historial__item" id="${id}">
+            <p class="historial__item--content">${input}=${result}</p>
+            <button class="historial__button historial__button--restore" onclick="toggleHistorial()">
+              <img src="./img/window-restore-solid.svg" alt="Restore" width="20" height="20">
+            </button>
+            <button class="historial__button historial__button--delete" onclick="toggleHistorial()">
+              <img src="./img/delete-left-solid.svg" alt="Delete" width="20" height="20">
+            </button>
+          </li>`;
+}
+
+function callHistory() {
+  const $historialList = document.getElementById("historialList");
+  console.log($historialList);
+  // $historialList.innerHTML = "";
+
+  if (localStorage.length === 0) {
+    const $firstItem = document.createElement("li");
+    $firstItem.classList.add("historial__item");
+    $firstItem.classList.add("first__item");
+    $firstItem.id = "firstItem";
+    $firstItem.textContent = "No hay operaciones guardadas";
+    $historialList.appendChild($firstItem);
+  } else {
+    // $firstItem.style.display = "none";
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      const value = localStorage.getItem(key);
+      $historialList.innerHTML += createItem(i + 1, key, value);
+    }
+  }
+}
