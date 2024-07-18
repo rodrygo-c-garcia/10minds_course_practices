@@ -48,12 +48,6 @@ function validateInput(inputValue) {
   const $dataOutput = document.getElementById("outputData");
   const $dataInput = document.getElementById("inputData");
 
-  for (let i = 0; i < inputValue.length; i++) {
-    if (inputValue[i] === "x") {
-      inputValue = inputValue.replace("x", "*");
-    }
-  }
-
   if (isMathOperation(inputValue)) {
     try {
       // Crear una nueva función que evalúa la expresión y retorna el resultado
