@@ -13,7 +13,7 @@ function selectButton(data) {
   const inputValue = $dataInput.value;
 
   if (data === "=") {
-    limpiarData(inputValue);
+    validateInput(inputValue);
   } else if (data === "c") {
     if (inputValue.length > 0) {
       deleteAtCursor($dataInput, startPos, endPos, inputValue);
@@ -37,7 +37,7 @@ function insertarNumero($dataInput, startPos, endPos, inputValue, data) {
   $dataInput.setSelectionRange(newPos, newPos);
 }
 
-function limpiarData(inputValue) {
+function validateInput(inputValue) {
   const $dataOutput = document.getElementById("outputData");
   const $dataInput = document.getElementById("inputData");
 
@@ -58,6 +58,7 @@ function limpiarData(inputValue) {
       } else {
         $dataOutput.innerText = inputValue + "=" + result;
         $dataInput.value = result;
+        // trabajara aqui
       }
     } catch (error) {
       $dataOutput.innerText = "Error";
