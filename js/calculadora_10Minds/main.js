@@ -204,3 +204,11 @@ function restoreItem(id) {
   $dataOutput.innerText = $restoreItem.textContent;
   toggleHistorial("close");
 }
+
+document.getElementById("outputData").addEventListener("click", function () {
+  const $dataOutput = document.getElementById("outputData");
+  const $dataInput = document.getElementById("inputData");
+  if ($dataOutput.textContent === "") return;
+  $dataInput.value = $dataOutput.textContent.split("=")[0];
+  $dataInput.focus();
+});
