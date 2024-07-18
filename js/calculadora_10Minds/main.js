@@ -11,6 +11,7 @@ function showDataHistorial(option) {
   else $historialList.innerHTML = "";
 }
 
+// Función para seleccionar un botón
 function selectButton(data) {
   const $dataInput = document.getElementById("inputData");
   const $dataOutput = document.getElementById("outputData");
@@ -44,6 +45,7 @@ function insertNumber($dataInput, startPos, endPos, inputValue, data) {
   $dataInput.setSelectionRange(newPos, newPos);
 }
 
+// Validar la entrada del usuario
 function validateInput(inputValue) {
   const $dataOutput = document.getElementById("outputData");
   const $dataInput = document.getElementById("inputData");
@@ -69,6 +71,7 @@ function validateInput(inputValue) {
   }
 }
 
+// Verificar si la entrada es una operación matemática válida
 function isMathOperation(input) {
   const validChars =
     /^[+\-]?(\d*\.?\d+|\(([^()]*|\([^()]*\))*\))+([+\-*\/]\s*[+\-]?(\d*\.?\d+|\(([^()]*|\([^()]*\))*\))*)*$/;
@@ -157,11 +160,10 @@ function createItem(id, input, result) {
           </li>`;
 }
 
+// Mostrar el historial
 function callHistory() {
   const $historialList = document.getElementById("historialList");
-
   if (localStorage.length > 0) {
-    // $firstItem.style.display = "none";
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
       const value = localStorage.getItem(key);
@@ -177,6 +179,7 @@ function callHistory() {
   }
 }
 
+// Borrar todo el historial
 function trashHistory() {
   if (localStorage.length > 0) {
     if (confirm("¿Estás seguro de que deseas eliminar todo el historial?")) {
@@ -188,6 +191,7 @@ function trashHistory() {
   }
 }
 
+// Borrar un item del historial
 function deleteItem(id, key) {
   const $historialList = document.getElementById("historialList");
   const $deleteItem = document.getElementById(id);
@@ -197,6 +201,7 @@ function deleteItem(id, key) {
   showDataHistorial("open");
 }
 
+// Restaurar un item del historial
 function restoreItem(id) {
   const $dataInput = document.getElementById("inputData");
   const $dataOutput = document.getElementById("outputData");
@@ -206,6 +211,7 @@ function restoreItem(id) {
   toggleHistorial("close");
 }
 
+// Mostrar el resultado en el input
 document.getElementById("outputData").addEventListener("click", function () {
   const $dataOutput = document.getElementById("outputData");
   const $dataInput = document.getElementById("inputData");
