@@ -56,5 +56,26 @@ function deleteAtCursor($dataInput, startPos, endPos, inputValue) {
   $dataInput.value = before + after;
   const newPos = startPos > 0 ? startPos - 1 : 0;
   $dataInput.setSelectionRange(newPos, newPos);
-  $dataInput.focus();
 }
+
+// Borrar el contenido del input si el botón se mantiene presionado
+const $deleteButton = document.getElementById("clearInput");
+let deleteTimer;
+
+$deleteButton.addEventListener("mousedown", function () {
+  // Iniciar el temporizador cuando el botón se presiona
+  deleteTimer = setTimeout(function () {
+    const $dataInput = document.getElementById("inputData");
+    $dataInput.value = "";
+  }, 1500);
+});
+
+// Cancelar el temporizador si el botón se suelta antes de 2 segundos
+$deleteButton.addEventListener("mouseup", function () {
+  clearTimeout(deleteTimer);
+});
+
+// cancelar el temporizador si el cursor se mueve fuera del botón
+$deleteButton.addEventListener("mouseleave", function () {
+  clearTimeout(deleteTimer);
+});
