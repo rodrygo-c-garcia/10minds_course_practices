@@ -58,7 +58,7 @@ function validateInput(inputValue) {
       } else {
         $dataOutput.innerText = inputValue + "=" + result;
         $dataInput.value = result;
-        // trabajara aqui
+        localStorage.setItem(inputValue, result);
       }
     } catch (error) {
       $dataOutput.innerText = "Error";
