@@ -186,3 +186,12 @@ function trashHistory() {
     }
   }
 }
+
+function deleteItem(id, key) {
+  const $historialList = document.getElementById("historialList");
+  const $deleteItem = document.getElementById(id);
+  $historialList.removeChild($deleteItem);
+  localStorage.removeItem(key);
+  showDataHistorial("close");
+  showDataHistorial("open");
+}
