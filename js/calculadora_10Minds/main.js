@@ -33,37 +33,54 @@ function insertarNumero($dataInput, startPos, endPos, inputValue, data) {
 }
 
 function limpiarData(inputValue) {
-  if (
-    inputValue[inputValue.length - 1] !== "+" &&
-    inputValue[inputValue.length - 1] !== "-" &&
-    inputValue[inputValue.length - 1] !== "x" &&
-    inputValue[inputValue.length - 1] !== "/" &&
-    inputValue[inputValue.length - 1] !== "." &&
-    inputValue[inputValue.length - 1] !== "%" &&
-    inputValue[0] !== "x" &&
-    inputValue[0] !== "/"
-  ) {
-    for (let i = 0; i < inputValue.length; i++) {
-      if (inputValue[i] === "x") {
-        inputValue = inputValue.replace("x", "*");
-      }
+  const $dataOutput = document.getElementById("outputData");
+  const $dataInput = document.getElementById("inputData");
+
+  for (let i = 0; i < inputValue.length; i++) {
+    if (inputValue[i] === "x") {
+      inputValue = inputValue.replace("x", "*");
     }
+  }
+
+  if (isMathOperation(inputValue)) {
     try {
       // Crear una nueva función que evalúa la expresión y retorna el resultado
       const result = new Function(`return ${inputValue}`)();
 
       // Verificar si el resultado es un número
-      if (isNaN(result)) {
-        throw new Error("La operación no se puede realizar.");
+      if (isNaN(result) || !isFinite(result)) {
+        $dataOutput.innerText = "Error en la operación";
+      } else {
+        $dataOutput.innerText = inputValue + "=" + result;
+        $dataInput.value = result;
       }
-
-      console.log(result);
     } catch (error) {
-      console.log("Expresion NO valida");
+      $dataOutput.innerText = "Error";
     }
   } else {
-    console.log("No se puede calcular con un operador al final");
+    $dataOutput.innerText = "Operación no válida";
   }
+}
+
+function isMathOperation(input) {
+  const validChars =
+    /^[+\-]?(\d*\.?\d+|\(([^()]*|\([^()]*\))*\))+([+\-*\/]\s*[+\-]?(\d*\.?\d+|\(([^()]*|\([^()]*\))*\))*)*$/;
+
+  function hasBalancedParentheses(str) {
+    let stack = [];
+    for (let char of str) {
+      if (char === "(") {
+        stack.push(char);
+      } else if (char === ")") {
+        if (stack.length === 0) return false;
+        stack.pop();
+      }
+    }
+    return stack.length === 0; // los parentesis están balanceados (true)
+  }
+
+  // console.log(validChars.test(input), hasBalancedParentheses(input));
+  return validChars.test(input) && hasBalancedParentheses(input);
 }
 
 // evitamos que se pueda escribir en el input desde el teclado
