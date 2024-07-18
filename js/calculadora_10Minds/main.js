@@ -20,13 +20,13 @@ function selectButton(data) {
       $dataOutput.innerText = "";
     }
   } else {
-    insertarNumero($dataInput, startPos, endPos, inputValue, data);
+    insertNumber($dataInput, startPos, endPos, inputValue, data);
     $dataOutput.innerText = "";
   }
   $dataInput.focus();
 }
 
-function insertarNumero($dataInput, startPos, endPos, inputValue, data) {
+function insertNumber($dataInput, startPos, endPos, inputValue, data) {
   // Insertar el número en la posición correcta
   const before = inputValue.substring(0, startPos);
   const after = inputValue.substring(endPos, inputValue.length);
