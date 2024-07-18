@@ -195,3 +195,12 @@ function deleteItem(id, key) {
   showDataHistorial("close");
   showDataHistorial("open");
 }
+
+function restoreItem(id) {
+  const $dataInput = document.getElementById("inputData");
+  const $dataOutput = document.getElementById("outputData");
+  const $restoreItem = document.getElementById(id);
+  $dataInput.value = $restoreItem.textContent.split("=")[0];
+  $dataOutput.innerText = $restoreItem.textContent;
+  toggleHistorial("close");
+}
