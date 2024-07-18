@@ -146,12 +146,12 @@ $deleteButton.addEventListener("mouseleave", function () {
 });
 
 function createItem(id, input, result) {
-  return `<li class="historial__item" id="${id}">
-            <p class="historial__item--content">${input}=${result}</p>
-            <button class="historial__button historial__button--restore" onclick="toggleHistorial()">
+  return `<li class="historial__item" id="item${id}">
+            <p class="historial__item--content" id="res${id}">${input}=${result}</p>
+            <button class="historial__button historial__button--restore" onclick="restoreItem('res${id}')">
               <img src="./img/window-restore-solid.svg" alt="Restore" width="20" height="20">
             </button>
-            <button class="historial__button historial__button--delete" onclick="toggleHistorial()">
+            <button class="historial__button historial__button--delete" onclick="deleteItem('item${id}', '${input}')">
               <img src="./img/delete-left-solid.svg" alt="Delete" width="20" height="20">
             </button>
           </li>`;
