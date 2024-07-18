@@ -1,7 +1,14 @@
-function toggleHistorial() {
+function toggleHistorial(option) {
+  showDataHistorial(option);
   const historial = document.getElementById("historialCard");
   const isVisible = historial.style.left === "0%";
   historial.style.left = isVisible ? "100%" : "0%";
+}
+
+function showDataHistorial(option) {
+  $historialList = document.getElementById("historialList");
+  if (option === "open") callHistory();
+  else $historialList.innerHTML = "";
 }
 
 function selectButton(data) {
