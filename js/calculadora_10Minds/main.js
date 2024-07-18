@@ -6,6 +6,7 @@ function toggleHistorial() {
 
 function selectButton(data) {
   const $dataInput = document.getElementById("inputData");
+  const $dataOutput = document.getElementById("outputData");
   // Obtener la posición actual del cursor o de la selección
   const startPos = $dataInput.selectionStart;
   const endPos = $dataInput.selectionEnd;
@@ -14,9 +15,13 @@ function selectButton(data) {
   if (data === "=") {
     limpiarData(inputValue);
   } else if (data === "c") {
-    deleteAtCursor($dataInput, startPos, endPos, inputValue);
-  } else if (data !== "0" || (inputValue.length > 0 && startPos > 0)) {
+    if (inputValue.length > 0) {
+      deleteAtCursor($dataInput, startPos, endPos, inputValue);
+      $dataOutput.innerText = "";
+    }
+  } else {
     insertarNumero($dataInput, startPos, endPos, inputValue, data);
+    $dataOutput.innerText = "";
   }
   $dataInput.focus();
 }
@@ -122,7 +127,9 @@ $deleteButton.addEventListener("mousedown", function () {
   // Iniciar el temporizador cuando el botón se presiona
   deleteTimer = setTimeout(function () {
     const $dataInput = document.getElementById("inputData");
+    const $dataOutput = document.getElementById("outputData");
     $dataInput.value = "";
+    $dataOutput.innerText = "";
   }, 1500);
 });
 
