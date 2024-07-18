@@ -11,12 +11,9 @@ function selectButton(data) {
   const endPos = $dataInput.selectionEnd;
   const inputValue = $dataInput.value;
 
-  console.log("startPos ", startPos);
-  console.log("endPos ", endPos);
-  console.log("inputValue ", inputValue);
-
-  // Caso especial cuando el valor es "0"
-  if (data !== "0" || (inputValue.length > 0 && startPos > 0)) {
+  if (data === "c") {
+    deleteAtCursor($dataInput, startPos, endPos, inputValue);
+  } else if (data !== "0" || (inputValue.length > 0 && startPos > 0)) {
     // Insertar el número en la posición correcta
     const before = inputValue.substring(0, startPos);
     const after = inputValue.substring(endPos, inputValue.length);
@@ -41,3 +38,23 @@ document.addEventListener("DOMContentLoaded", (event) => {
     event.preventDefault(); // Esto evita que cualquier tecla presionada tenga efecto en el input
   });
 });
+
+function deleteAtCursor($dataInput, startPos, endPos, inputValue) {
+  let before;
+  let after;
+
+  if (startPos === endPos) {
+    // Si no hay selección
+    before = inputValue.substring(0, startPos - 1);
+    after = inputValue.substring(endPos, inputValue.length);
+  } else {
+    // Si hay selección
+    before = inputValue.substring(0, startPos);
+    after = inputValue.substring(endPos, inputValue.length);
+  }
+
+  $dataInput.value = before + after;
+  const newPos = startPos > 0 ? startPos - 1 : 0;
+  $dataInput.setSelectionRange(newPos, newPos);
+  $dataInput.focus();
+}
