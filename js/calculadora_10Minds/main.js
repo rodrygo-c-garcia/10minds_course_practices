@@ -158,22 +158,31 @@ function createItem(id, input, result) {
 
 function callHistory() {
   const $historialList = document.getElementById("historialList");
-  console.log($historialList);
-  // $historialList.innerHTML = "";
 
-  if (localStorage.length === 0) {
+  if (localStorage.length > 0) {
+    // $firstItem.style.display = "none";
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      const value = localStorage.getItem(key);
+      $historialList.innerHTML += createItem(i + 1, key, value);
+    }
+  } else {
     const $firstItem = document.createElement("li");
     $firstItem.classList.add("historial__item");
     $firstItem.classList.add("first__item");
     $firstItem.id = "firstItem";
     $firstItem.textContent = "No hay operaciones guardadas";
     $historialList.appendChild($firstItem);
-  } else {
-    // $firstItem.style.display = "none";
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      const value = localStorage.getItem(key);
-      $historialList.innerHTML += createItem(i + 1, key, value);
+  }
+}
+
+function trashHistory() {
+  if (localStorage.length > 0) {
+    if (confirm("¿Estás seguro de que deseas eliminar todo el historial?")) {
+      localStorage.clear();
+      const $historialList = document.getElementById("historialList");
+      $historialList.innerHTML = "";
+      callHistory();
     }
   }
 }
