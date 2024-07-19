@@ -73,7 +73,7 @@ function validateInput(inputValue) {
 // Verificar si la entrada es una operación matemática válida
 function isMathOperation(input) {
   const validChars =
-    /^[+\-]?(\d*\.?\d+|\(([^()]*|\([^()]*\))*\))+([+\-*\/]\s*[+\-]?(\d*\.?\d+|\(([^()]*|\([^()]*\))*\))*)*$/;
+    /^[+\-]?(\d*\.?\d+|\(\s*[+\-]?(\d*\.?\d+|\([^()]*\))\s*\))([+\-*\/]\s*[+\-]?(\d*\.?\d+|\(\s*[+\-]?(\d*\.?\d+|\([^()]*\))\s*\)))*$/;
 
   function hasBalancedParentheses(str) {
     let stack = [];
