@@ -116,7 +116,6 @@ body {
 }
 
 /* calculadora */
-.output,
 .calculator {
   flex: 1;
   margin: 10px 0;
@@ -128,27 +127,43 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 5px;
   padding: 0 10px;
+  flex: 1;
 }
 
 /* pantalla de la calculadora */
 
 .output {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 45px;
   margin: 0;
   padding: 10px;
+  flex: 1;
+}
+
+.output__operation,
+.input__data {
+  flex-grow: 1;
+  width: 100%;
 }
 
 .output__operation {
-  display: block;
+  display: flex;
+  justify-content: flex-end; /* Alinea el contenido a la derecha */
+  align-items: flex-end;
+}
+
+.output__operation-inner {
   text-align: right;
-  font-size: 25px;
-  width: 100%;
-  height: 90px;
-  font-weight: 200;
+  font-size: 30px;
   color: #806e6e;
+  font-weight: 200;
   overflow-x: auto;
-  padding-top: 7%;
+  white-space: nowrap;
+  min-width: 100%;
+  padding: 10px 0;
 }
 
 .input__data {
@@ -160,11 +175,10 @@ body {
   border-top: 1px solid #855959;
   text-align: right;
   cursor: text;
-  width: 100%;
-  height: 70px;
   font-size: 45px;
   font-weight: 300;
   background-color: transparent;
+  padding: 15px 0;
 }
 
 /* botones calculadora */
@@ -179,7 +193,7 @@ body {
   color: #fff;
   font-size: 1.5em;
   cursor: pointer;
-  padding: 20px 25px;
+  padding: 20px 30px;
   font-weight: 400;
 }
 
@@ -224,7 +238,7 @@ body {
   transition: left 0.5s ease;
   z-index: 10;
   border-radius: 30px;
-  padding: 10px 15px;
+  padding: 10px 15px 0;
 }
 
 /* HISTORIAL */
@@ -296,8 +310,86 @@ body {
   background: linear-gradient(120deg, #81541c 10%, #f1411e 60%);
 }
 
-@media screen and (max-width: 900px) {
+/* Media query para Kindle 800x1200 */
+@media (max-width: 412px) and (max-height: 915px) {
+  .background {
+    width: 90%;
+    height: 100%;
+    height: auto;
+  }
+
+  .background .shape {
+    height: 150px;
+    width: 150px;
+  }
+
   .main {
-    width: 40%;
+    width: 90%;
+    height: auto;
+    font-size: 16px;
+  }
+
+  .calculator {
+    grid-gap: 5px;
+  }
+
+  .button,
+  .button__historial {
+    padding: 5px 30px;
+    font-size: 25px;
+  }
+
+  .input__data {
+    font-size: 50px;
+  }
+
+  .output__operation-inner {
+    font-size: 40px;
+  }
+}
+
+/* Media query para Kindle 800x1200 */
+@media (min-width: 413px) and (max-width: 810px) and (min-height: 916px) and (max-height: 1280px) {
+  .background {
+    width: 90%;
+    height: auto;
+  }
+
+  .background .shape {
+    height: 250px;
+    width: 250px;
+  }
+
+  .shape:first-child {
+    left: -10px;
+    top: -95px;
+  }
+
+  .shape:last-child {
+    right: -20px;
+    bottom: -15px;
+  }
+  .main {
+    width: 70%;
+    height: auto;
+    font-size: 25px;
+  }
+
+  .calculator {
+    grid-gap: 10px;
+  }
+
+  .button,
+  .button__historial {
+    padding: 10px 50px;
+    font-size: 30px;
+  }
+
+  .input__data {
+    font-size: 70px;
+  }
+
+  .output__operation-inner {
+    font-size: 60px;
   }
 }
