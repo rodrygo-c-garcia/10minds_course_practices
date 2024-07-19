@@ -11,7 +11,6 @@ function showDataHistorial(option) {
   else $historialList.innerHTML = "";
 }
 
-// Función para seleccionar un botón
 function selectButton(data) {
   const $dataInput = document.getElementById("inputData");
   const $dataOutput = document.getElementById("outputData");
@@ -25,11 +24,11 @@ function selectButton(data) {
   } else if (data === "c") {
     if (inputValue.length > 0) {
       deleteAtCursor($dataInput, startPos, endPos, inputValue);
-      $dataOutput.innerText = "";
+      $dataOutput.innerText = "0";
     }
   } else {
     insertNumber($dataInput, startPos, endPos, inputValue, data);
-    $dataOutput.innerText = "";
+    $dataOutput.innerText = "0";
   }
   $dataInput.focus();
 }
@@ -134,7 +133,7 @@ $deleteButton.addEventListener("mousedown", function () {
     const $dataInput = document.getElementById("inputData");
     const $dataOutput = document.getElementById("outputData");
     $dataInput.value = "";
-    $dataOutput.innerText = "";
+    $dataOutput.innerText = "0";
   }, 1500);
 });
 
